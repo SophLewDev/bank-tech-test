@@ -31,11 +31,11 @@ date || credit || debit || balance
                            ┌──────────────────┐
                            │ class Statement  │
                            │                  │
-                           │ balance          │
+                           │ addToAccount     │
                            │                  │
+                           │  balance         │
                            │                  │
-                           │ statements       │
-                      ┌───►|                  │◄──┐
+                      ┌───►| statements       │◄──┐
                       │    │                  │   │
                       │    │                  │   │
                       │    │                  │   │
@@ -68,8 +68,7 @@ class Withdrawal {
 
 
 class Account {
-  constructor(money) {
-    this.money = money
+  constructor() {
     this.account = []
   }
 
