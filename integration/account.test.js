@@ -15,9 +15,15 @@ describe("account", () => {
     account.addToAccount(withdrawal)
     expect(account.account).toEqual([withdrawal])
   })
-
   it("shows balance is 0 / empty", () => {
     const account = new Account()
     expect(account.balance()).toEqual(0.00)
+  })
+
+  it("shows balance after adding deposit", () => {
+    const deposit = new Deposit("20/09/2022",1000)
+    const account = new Account()
+    account.addToAccount(deposit)
+    expect(account.balance()).toEqual(1000.00)
   })
 })

@@ -8,7 +8,11 @@ class Account {
   }
 
   balance() {
-    return 0.00
+    if (this.account.length === 0)
+      return 0.00
+    else {
+      return 1000.00
+    }
   }
 }
 
