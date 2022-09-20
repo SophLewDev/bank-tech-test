@@ -1,18 +1,28 @@
+const Deposit = require("./deposit")
+
 class Account {
   constructor() {
     this.account = []
+    this.balance = 0.00
   }
 
-  addToAccount(money) {
-    this.account.push(money)
+  addToAccount(transaction) {
+    this.account.push(transaction)
   }
 
-  balance() {
-    if (this.account.length === 0)
-      return 0.00
-    else {
-      return 1000.00
-    }
+  calculate() {
+    this.account.map((transaction) => {
+      if (transaction instanceof Deposit) {
+        this.balance += transaction.amount
+      } else {
+        this.balance += transaction.amount * (-1)
+      }
+      console.log(this.balance)
+    })
+  }
+
+  getBalance() {
+    return this.balance
   }
 }
 

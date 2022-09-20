@@ -137,11 +137,11 @@ date || credit || debit || balance
 
 ```
 const deposit = new Deposit("20/09/2022",1000)
-const withdrawal = new Withdrawal("20/09/2022",1000)
+const withdrawal = new Withdrawal("20/09/2022",500)
 const account1 = new account()
 account.addToAccount(deposit)
 account.addToAccount(withdrawal)
-account.balance # => 0
+account.balance # => 500
 ```
 
 #### returns the statement after adding a deposit to the account, and withdrawal from the account
