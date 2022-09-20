@@ -101,7 +101,7 @@ class Withdrawal {
 }
 
 
-class bankStatement {
+class Account {
   constructor(money) {
     this.money = money
     this.account = []
@@ -120,3 +120,42 @@ class bankStatement {
   }
 }
 ```
+
+## Examples of Integration tests
+
+### adds a deposit to the account and returns balance
+
+const deposit = new Deposit("20/09/2022",1000)
+const account = new account()
+account.addToAccount(deposit)
+account.balance # => 1000.00
+
+### adds a deposit to the account and returns statement
+
+const deposit = new Deposit("20/09/2022",1000)
+const account = new account()
+account.addToAccount(deposit)
+account.statement # =>
+date || credit || debit || balance
+20/09/2022 || 1000.00 || || 1000.00
+
+### returns the balance after adding a deposit to the account, and withdrawel from the account
+
+const deposit = new Deposit("20/09/2022",1000)
+const withdrawl = new Withdrawal("20/09/2022",1000)
+const account1 = new account()
+account.addToAccount(deposit)
+account.addToAccount(withdrawal)
+account.balance # => 0
+
+### returns the statement after adding a deposit to the account, and withdrawel from the account
+
+const deposit = new Deposit("20/09/2022",1000)
+const withdrawl = new Withdrawal("20/09/2022",1000)
+const account1 = new account()
+account.addToAccount(deposit)
+account.addToAccount(withdrawal)
+account.statment # =>
+date || credit || debit || balance
+20/09/2022 || || 1000.00 || 0
+20/09/2022 || 1000.00 || || 1000.00
