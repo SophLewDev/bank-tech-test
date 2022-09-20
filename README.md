@@ -106,6 +106,13 @@ account.addToAccount(withdrawal)
 account.account # => [withdrawal]
 ```
 
+#### returns balance as 0 / empty when nothing has been added
+
+```
+const account = new Account()
+account.balance # => 0.00
+```
+
 #### adds a deposit to the account and returns balance
 
 ```
