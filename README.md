@@ -88,6 +88,24 @@ class Account {
 
 ## Examples of Integration tests
 
+#### adds deposit to account
+
+```
+const deposit = new Deposit("20/09/2022",1000)
+const account = new account()
+account.addToAccount(deposit)
+account.account # => [deposit]
+```
+
+#### adds withdrawal to account
+
+```
+const withdrawal = new Withdrawal("20/09/2022",1000)
+const account = new account()
+account.addToAccount(withdrawal)
+account.account # => [withdrawal]
+```
+
 #### adds a deposit to the account and returns balance
 
 ```
@@ -108,7 +126,7 @@ date || credit || debit || balance
 20/09/2022 || 1000.00 || || 1000.00
 ```
 
-#### returns the balance after adding a deposit to the account, and withdrawel from the account
+#### returns the balance after adding a deposit to the account, and withdrawal from the account
 
 ```
 const deposit = new Deposit("20/09/2022",1000)
@@ -119,7 +137,7 @@ account.addToAccount(withdrawal)
 account.balance # => 0
 ```
 
-#### returns the statement after adding a deposit to the account, and withdrawel from the account
+#### returns the statement after adding a deposit to the account, and withdrawal from the account
 
 ```
 const deposit = new Deposit("20/09/2022",1000)
