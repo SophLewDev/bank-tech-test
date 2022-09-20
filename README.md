@@ -122,17 +122,6 @@ account.addToAccount(deposit)
 account.balance # => 1000.00
 ```
 
-#### adds a deposit to the account and returns statement
-
-```
-const deposit = new Deposit("20/09/2022",1000)
-const account = new account()
-account.addToAccount(deposit)
-account.statement # =>
-date || credit || debit || balance
-20/09/2022 || 1000.00 || || 1000.00
-```
-
 #### returns the balance after adding a deposit to the account, and withdrawal from the account
 
 ```
@@ -142,6 +131,24 @@ const account1 = new account()
 account.addToAccount(deposit)
 account.addToAccount(withdrawal)
 account.balance # => 500
+```
+
+#### returns statement with no previoustransactions
+
+```
+const account = new Account()
+account.getStatement() # => "date || credit || debit || balance"
+```
+
+#### adds a deposit to the account and returns statement
+
+```
+const deposit = new Deposit("20/09/2022",1000)
+const account = new account()
+account.addToAccount(deposit)
+account.statement # =>
+date || credit || debit || balance
+20/09/2022 || 1000.00 || || 1000.00
 ```
 
 #### returns the statement after adding a deposit to the account, and withdrawal from the account
