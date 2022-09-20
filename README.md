@@ -112,7 +112,7 @@ date || credit || debit || balance
 
 ```
 const deposit = new Deposit("20/09/2022",1000)
-const withdrawl = new Withdrawal("20/09/2022",1000)
+const withdrawal = new Withdrawal("20/09/2022",1000)
 const account1 = new account()
 account.addToAccount(deposit)
 account.addToAccount(withdrawal)
@@ -123,7 +123,7 @@ account.balance # => 0
 
 ```
 const deposit = new Deposit("20/09/2022",1000)
-const withdrawl = new Withdrawal("20/09/2022",1000)
+const withdrawal = new Withdrawal("20/09/2022",1000)
 const account1 = new account()
 account.addToAccount(deposit)
 account.addToAccount(withdrawal)
@@ -162,3 +162,7 @@ withdrawal.date # => "20/09/2022"
 const withdrawal = new Withdrawal("20/09/2022",1000)
 withdrawal.amount # => 1000.00
 ```
+
+### Implement the Behaviour
+
+I will no be following the test-driving process of red, green, refactor to implement the behaviour.
