@@ -16,8 +16,8 @@ describe("account", () => {
     expect(account.account).toEqual([withdrawal])
   })
 
-  // it("shows balance is 0 / empty", () => {
-  //   const account = new Account()
-  //   expect(account.balance).toEqual(0.00)
-  // })
+  it("shows balance is 0 / empty", () => {
+    const account = new Account()
+    expect(account.balance()).toEqual(0.00)
+  })
 })
