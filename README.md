@@ -132,3 +132,33 @@ date || credit || debit || balance
 20/09/2022 || || 1000.00 || 0
 20/09/2022 || 1000.00 || || 1000.00
 ```
+
+## Examples of Unit tests
+
+#### returns date of deposit
+
+```
+const deposit = new Deposit("20/09/2022",1000)
+deposit.date # => "20/09/2022"
+```
+
+#### returns amount of deposit
+
+```
+const deposit = new Deposit("20/09/2022",1000)
+deposit.amount # => 1000.00
+```
+
+#### returns date of withdrawal
+
+```
+const withdrawal = new Withdrawal("20/09/2022",1000)
+withdrawal.date # => "20/09/2022"
+```
+
+#### returns amount of withdrawal
+
+```
+const withdrawal = new Withdrawal("20/09/2022",1000)
+withdrawal.amount # => 1000.00
+```
