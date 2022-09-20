@@ -1,4 +1,3 @@
-const { it } = require('node:test')
 const Account = require('../account')
 const Deposit = require('../deposit')
 const Withdrawal = require('../withdrawal')
@@ -37,8 +36,8 @@ describe("account", () => {
     account.calculate()
     expect(account.getBalance()).toEqual(500.00)
   })
-  // it("returns statement without any deposit or withdrawal", () => {
-  //   const account = new Account()
-  //   expect(account.getStatement()).toEqual("date || credit || debit || balance")
-  // })
+  it("returns statement without any deposit or withdrawal", () => {
+    const account = new Account()
+    expect(account.getStatement()).toEqual("date || credit || debit || balance")
+  })
 })

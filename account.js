@@ -24,6 +24,10 @@ class Account {
   getBalance() {
     return this.balance
   }
+
+  getStatement() {
+    return "date || credit || debit || balance"
+  }
 }
 
 module.exports = Account
