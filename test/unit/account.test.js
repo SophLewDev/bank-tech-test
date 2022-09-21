@@ -133,4 +133,20 @@ describe("account", () => {
     const account = new Account()
     expect(account.addToAccount(fakeWithdrawal)).toEqual("Unrecognised transaction type")
   })
+  it("returns 'cannot add this transaction to account' if amount to withdraw is larger than the account's balance", () => {
+    const fakeDeposit = {
+      date: "20/09/2022",
+      amount: 500,
+      transactionType: "DEPOSIT",
+      resultingAmount: 500
+    }
+    const fakeWithdrawal = {
+      date: "20/09/2022",
+      amount: 1000,
+      transactionType: "WITHDRAWAL",
+    }
+    const account = new Account()
+    account.addToAccount(fakeDeposit)
+    expect(account.addToAccount(fakeWithdrawal)).toEqual("Withdraw amount exceeds funds")
+  })
 })
