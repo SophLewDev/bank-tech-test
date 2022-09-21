@@ -39,7 +39,7 @@ class Account {
   _updateBalance(transaction) {
     if (transaction.transactionType === "DEPOSIT") {
       this.balance += transaction.amount
-    } else if (transaction.transactionType === "WITHDRAWAL") {
+    } else {
       this.balance -= transaction.amount
     }
   }
