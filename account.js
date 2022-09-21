@@ -7,7 +7,11 @@ class Account {
   }
 
   addToAccount(transaction) {
-    this.account.push(transaction)
+    if (typeof transaction.date === "string") {
+      this.account.push(transaction)
+    } else {
+      return "Unrecognised transaction type"
+    }
   }
 
   calculate() {
@@ -17,9 +21,9 @@ class Account {
       } else if (transaction.transactionType === "WITHDRAWAL") {
         this.balance -= transaction.amount
       }
-      else {
-        return "Unrecognised transaction type"
-      }
+      // else {
+      //   return "Unrecognised transaction type"
+      // }
     })
   }
 
