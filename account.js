@@ -14,7 +14,6 @@ class Account {
     this.listOfTransactions.push(transaction)
     this._updateBalance(transaction)
     transaction.resultingAmount = this.getBalance()
-    console.log(this.listOfTransactions)
   }
 
   getBalance() {

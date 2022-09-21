@@ -1,5 +1,25 @@
 # Bank tech test
 
+## The Application
+
+This app logs deposits and withdrawals from a bank account and is to be used from within the JavaScript console.
+
+The Account object acts as the interface for the app
+All transactions i.e. Deposit and Withdrawals, are stored within the Account's list of transactions, with their transactions details stored as properties
+Within the account object, you can add transaction to acocunt and be able to view your current balance and statement
+
+### To run
+
+Clone this repository git clone https://github.com/SophLewDev/bank-tech-test
+Install dependancies npm install
+Open node in the terminal (ensure you have node installed)
+Create an account let account = new Account;
+Create a Deposit and/or Withdrawal object:
+let deposit = new Deposit("21/09/2022",1000)
+let withdrawal = new Withdrawal("21/09/2022",500)
+Get your current account balance printed to the console using account.getBalance()
+Get your current acocunt statement printed to the console using account.getStatement()
+
 ## Specification
 
 ### Requirements
