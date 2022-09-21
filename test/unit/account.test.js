@@ -79,12 +79,14 @@ describe("account", () => {
     const fakeDeposit = {
       date: "20/09/2022",
       amount: 1000,
-      transactionType: "DEPOSIT"
+      transactionType: "DEPOSIT",
+      resultingAmount: 1000
     }
     const fakeWithdrawal = {
       date: "20/09/2022",
       amount: 500,
-      transactionType: "WITHDRAWAL"
+      transactionType: "WITHDRAWAL",
+      resultingAmount: 500
     }
     const account = new Account()
     account.addToAccount(fakeDeposit)

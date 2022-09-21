@@ -13,6 +13,8 @@ class Account {
     }
     this.listOfTransactions.push(transaction)
     this._updateBalance(transaction)
+    transaction.resultingAmount = this.getBalance()
+    console.log(this.listOfTransactions)
   }
 
   getBalance() {
@@ -22,17 +24,11 @@ class Account {
   getStatement() {
     let statement  = "date || credit || debit || balance\n"
     this.listOfTransactions.map((transaction) => {
-      let date = transaction.date
-      let credit = "";
-      let debit = "";
-      if (transaction.transactionType === "DEPOSIT") {
-        credit = transaction.amount + " "
-        this.balance += transaction.amount
-      } else if (transaction.transactionType === "WITHDRAWAL") {
-        debit = transaction.amount + " "
-        this.balance -= transaction.amount
-      }
-      statement += `${date} || ${credit}|| ${debit}|| ${this.balance} ||\n`
+      let credit = transaction.transactionType === "DEPOSIT" ? 
+        transaction.amount + " " : "";
+      let debit = transaction.transactionType === "WITHDRAWAL" ?
+        transaction.amount + " " : "";
+      statement += `${transaction.date} || ${credit}|| ${debit}|| ${transaction.resultingAmount} ||\n`
     })
     return statement
   }

@@ -3,6 +3,7 @@ class Deposit {
     this.transactionType = "DEPOSIT"
     this.date = date
     this.amount = amount
+    this.resultingAmount
   }
 }
 

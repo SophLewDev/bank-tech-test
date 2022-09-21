@@ -3,6 +3,7 @@ class Withdrawal {
     this.transactionType = "WITHDRAWAL"
     this.date = date
     this.amount = amount
+    this.resultingAmount
   }
 }
 
