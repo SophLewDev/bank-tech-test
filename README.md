@@ -52,26 +52,32 @@ date || credit || debit || balance
 
 ### Diagram of the class systems
 
-                           ┌──────────────────┐
-                           │ class Statement  │
-                           │                  │
-                           │ addToAccount     │
-                           │                  │
-                           │  balance         │
-                           │                  │
-                      ┌───►| statements       │◄──┐
-                      │    │                  │   │
-                      │    │                  │   │
-                      │    │                  │   │
-                      │    └──────────────────┘   │
-                      │                           │
-         ┌────────────┴────┐                 ┌────┴────────────┐
-         │ class Deposit   │                 │class Withdrawal │
-         │                 │                 │                 │
-         │ initialize      │                 │ initialize      │
-         │                 │                 │                 │
-         │                 │                 │                 │
-         └─────────────────┘                 └─────────────────┘
+                            ┌──────────────────┐
+                            │ class Statement  │
+                            │                  │
+                            │ initialize:      │
+                            │listoftransactions|
+                            │balance           │
+                            │                  │
+                            │ addToAccount     │
+                       ┌────► getBalance       │◄──┐
+                       │    │ getStatement     │   │
+                       │    │                  │   │
+                       │    │                  │   │
+                       │    └──────────────────┘   │
+                       │                           │
+          ┌────────────┴────┐                 ┌────┴────────────┐
+          │ class Deposit   │                 │class Withdrawal │
+          │                 │                 │                 │
+          │ initialize:     │                 │ initialize:     │
+          │                 │                 │                 │
+          │ transaction type│                 │ transaction type│
+          │ date            │                 │ date            │
+          │ amount          │                 │ amount          │
+          │ resulting amount│                 │ resulting amount│
+          │                 │                 │                 │
+          │                 │                 │                 │
+          └─────────────────┘                 └─────────────────┘
 
 ## Design of their interfaces
 
