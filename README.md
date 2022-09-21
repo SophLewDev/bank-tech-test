@@ -69,7 +69,7 @@ class Withdrawal {
 
 class Account {
   constructor() {
-    this.account = []
+    this.listOfTransactions = []
   }
 
   const addToAccount = () => {

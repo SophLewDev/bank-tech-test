@@ -159,16 +159,16 @@
 &nbsp;
 class Account {
   constructor() {
-    this.account = []
+    this.listOfTransactions = []
     this.balance = 0.00
   }
 &nbsp;
   addToAccount(transaction) {
-    this.account.push(transaction)
+    this.listOfTransactions.push(transaction)
   }
 &nbsp;
   calculate() {
-    this.account.map((transaction) =&gt; {
+    this.listOfTransactions.map((transaction) =&gt; {
       if (transaction instanceof Deposit) {
         this.balance += transaction.amount
       } else {
@@ -183,7 +183,7 @@ class Account {
 &nbsp;
   getStatement() {
     let statement  = "date || credit || debit || balance\n"
-    this.account.map((transaction) =&gt; {
+    this.listOfTransactions.map((transaction) =&gt; {
       const date = transaction.date
       let credit = "";
       let debit = "";

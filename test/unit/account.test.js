@@ -6,21 +6,29 @@ describe("account", () => {
 
   it("add deposit to account and return deposit", () => {
     const fakeDeposit = {
+      transactionType: "DEPOSIT",
       date: "20/09/2022",
       amount: 1000
     }
     const account = new Account()
     account.addToAccount(fakeDeposit)
-    expect(account.account).toEqual([fakeDeposit])
+    expect(account.listOfTransactions).toEqual([fakeDeposit])
   })
   it("add withdrawal to account and return withdrawal", () => {
+    const fakeDeposit = {
+      transactionType: "DEPOSIT",
+      date: "20/09/2022",
+      amount: 1000
+    }
     const fakeWithdrawal = {
+      transactionType: "WITHDRAWAL",
       date: "20/09/2022",
       amount: 1000
     }
     const account = new Account()
+    account.addToAccount(fakeDeposit)
     account.addToAccount(fakeWithdrawal)
-    expect(account.account).toEqual([fakeWithdrawal])
+    expect(account.listOfTransactions).toEqual([fakeDeposit, fakeWithdrawal])
   })
   it("shows balance is 0 / empty", () => {
     const account = new Account()
@@ -35,7 +43,6 @@ describe("account", () => {
     const account = new Account()
     account.addToAccount(fakeDeposit)
     console.log(account.account)
-    account.calculate()
     expect(account.getBalance()).toEqual(1000.00)
   })
   it("shows balance after deposit and withdrawal", () => {
@@ -52,7 +59,6 @@ describe("account", () => {
     const account = new Account()
     account.addToAccount(fakeDeposit)
     account.addToAccount(fakeWithdrawal)
-    account.calculate()
     expect(account.getBalance()).toEqual(500.00)
   })
   it("returns statement without any deposit or withdrawal", () => {
