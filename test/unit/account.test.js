@@ -59,4 +59,14 @@ describe("account", () => {
     const account = new Account()
     expect(account.getStatement()).toEqual("date || credit || debit || balance\n")
   })
+  it("returns statement after adding a deposit to the account", () => {
+    const fakeDeposit = {
+      date: "20/09/2022",
+      amount: 1000,
+      transactionType: "DEPOSIT"
+    }
+    const account = new Account()
+    account.addToAccount(fakeDeposit)
+    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n")
+  })
 })
