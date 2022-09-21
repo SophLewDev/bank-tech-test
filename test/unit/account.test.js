@@ -3,7 +3,7 @@ const Deposit = require('../../deposit')
 const Withdrawal = require('../../withdrawal')
 
 describe("account", () => {
-  it.only("add deposit to account and return deposit", () => {
+  it("add deposit to account and return deposit", () => {
     const fakeDeposit = {
       date:() => "20/09/2022",
       amount:() => 1000
@@ -11,5 +11,14 @@ describe("account", () => {
     const account = new Account()
     account.addToAccount(fakeDeposit)
     expect(account.account).toEqual([fakeDeposit])
+  })
+  it("add withdrawal to account and return withdrawal", () => {
+    const fakeWithdrawal = {
+      date:() => "20/09/2022",
+      amount:() => 1000
+    }
+    const account = new Account()
+    account.addToAccount(fakeWithdrawal)
+    expect(account.account).toEqual([fakeWithdrawal])
   })
 })
