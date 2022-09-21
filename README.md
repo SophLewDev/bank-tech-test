@@ -22,7 +22,7 @@ Within the account object, you can add transaction to account and be able to vie
 
 ### Demo
 
-![alt text](img/bank_tech_test_gif.gif)
+![alt text](img/bank_tech_test-gif.gif)
 
 ## Specification
 

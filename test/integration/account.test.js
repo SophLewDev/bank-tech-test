@@ -2,6 +2,10 @@ const Account = require('../../src/account')
 const Deposit = require('../../src/deposit')
 const Withdrawal = require('../../src/withdrawal')
 
+const Account = require('./src/account')
+const Deposit = require('./src/deposit')
+const Withdrawal = require('./src/withdrawal')
+
 describe("account", () => {
  let date = new Date().toLocaleString().split(',')[0]
 
