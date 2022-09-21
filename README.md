@@ -60,7 +60,7 @@ date || credit || debit || balance
                             │balance           │
                             │                  │
                             │ addToAccount     │
-                       ┌────► getBalance       │◄──┐
+                       ┌───►| getBalance       │◄──┐
                        │    │ getStatement     │   │
                        │    │                  │   │
                        │    │                  │   │
@@ -84,15 +84,19 @@ date || credit || debit || balance
 ```
 class Deposit {
   constructor(date, amount) {     //date is a string, amount is an integer
+    this.transactionType = "DEPOSIT"
     this.date = date
     this.amount = amount
+    this.resultingAmount
   }
 }
 
 class Withdrawal {
   constructor(date, amount) {     //date is a string, amount is an integer
+    this.transactionType = "WITHDRAWAL"
     this.date = date
     this.amount = amount
+    this.resultingAmount
   }
 }
 
@@ -100,17 +104,18 @@ class Withdrawal {
 class Account {
   constructor() {
     this.listOfTransactions = []
+    this.balance = 0.00
   }
 
-  const addToAccount = () => {
-
-  }
-
-  const balance = () => {
+  addToAccount = () => {
 
   }
 
-  const statement = () => {
+  getBalance = () => {
+
+  }
+
+  getStatement = () => {
 
   }
 }
