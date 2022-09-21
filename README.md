@@ -4,9 +4,9 @@
 
 This app logs deposits and withdrawals from a bank account and is to be used from within the JavaScript console.
 
-The Account object acts as the interface for the app.
-All transactions i.e. Deposit and Withdrawals, are stored within the Account's list of transactions, with their transactions details stored as properties.
-Within the account object, you can add transaction to acocunt and be able to view your current balance and statement.
+The Account object acts as the interface for the app.  
+All transactions i.e. Deposit and Withdrawals, are stored within the Account's list of transactions, with their transactions details stored as properties.  
+Within the account object, you can add transaction to account and be able to view your current balance and statement.
 
 ### To run
 
