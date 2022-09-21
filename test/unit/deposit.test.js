@@ -1,4 +1,4 @@
-const Deposit = require('../../deposit')
+const Deposit = require('../../src/deposit')
 
 describe("deposit", () => {
   it("returns date of deposit", () => {
