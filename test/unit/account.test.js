@@ -79,14 +79,12 @@ describe("account", () => {
     const fakeDeposit = {
       date: "20/09/2022",
       amount: 1000,
-      transactionType: "DEPOSIT",
-      resultingAmount: 1000
+      transactionType: "DEPOSIT"
     }
     const fakeWithdrawal = {
       date: "20/09/2022",
       amount: 500,
-      transactionType: "WITHDRAWAL",
-      resultingAmount: 500
+      transactionType: "WITHDRAWAL"
     }
     const account = new Account()
     account.addToAccount(fakeDeposit)
@@ -97,8 +95,7 @@ describe("account", () => {
     const fakeDeposit = {
       date: 789,
       amount: 1000,
-      transactionType: "DEPOSIT",
-      resultingAmount: 1000
+      transactionType: "DEPOSIT"
     }
     const account = new Account()
     expect(account.addToAccount(fakeDeposit)).toEqual("Unrecognised transaction type")
@@ -107,8 +104,7 @@ describe("account", () => {
     const fakeWithdrawal = {
       date: 789,
       amount: 500,
-      transactionType: "WITHDRAWAL",
-      resultingAmount: 500
+      transactionType: "WITHDRAWAL"
     }
     const account = new Account()
     expect(account.addToAccount(fakeWithdrawal)).toEqual("Unrecognised transaction type")
@@ -117,8 +113,7 @@ describe("account", () => {
     const fakeDeposit = {
       date: "20/09/2022",
       amount: "1000",
-      transactionType: "DEPOSIT",
-      resultingAmount: 1000
+      transactionType: "DEPOSIT"
     }
     const account = new Account()
     expect(account.addToAccount(fakeDeposit)).toEqual("Unrecognised transaction type")
@@ -127,8 +122,7 @@ describe("account", () => {
     const fakeWithdrawal = {
       date: "20/09/2022",
       amount: "500",
-      transactionType: "WITHDRAWAL",
-      resultingAmount: 500
+      transactionType: "WITHDRAWAL"
     }
     const account = new Account()
     expect(account.addToAccount(fakeWithdrawal)).toEqual("Unrecognised transaction type")
@@ -137,8 +131,7 @@ describe("account", () => {
     const fakeDeposit = {
       date: "20/09/2022",
       amount: 500,
-      transactionType: "DEPOSIT",
-      resultingAmount: 500
+      transactionType: "DEPOSIT"
     }
     const fakeWithdrawal = {
       date: "20/09/2022",
