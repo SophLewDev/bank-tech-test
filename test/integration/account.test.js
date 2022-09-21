@@ -45,10 +45,14 @@ describe("account", () => {
     account.addToAccount(withdrawal)
     expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n20/09/2022 || || 500 || 500 ||\n")
   })
-  it("returns 'unrecognised transaction type' if date of transaction added is not a string", () => {
+  it("returns 'unrecognised transaction type' if date of deposit transaction added is not a string", () => {
     const deposit = new Deposit(789,1000)
     const account = new Account()
     expect(account.addToAccount(deposit)).toEqual("Unrecognised transaction type")
-    
+  })
+  it("returns 'unrecognised transaction type' if date of withdrawal transaction added is not a string", () => {
+    const withdrawal = new Withdrawal(789,1000)
+    const account = new Account()
+    expect(account.addToAccount(withdrawal)).toEqual("Unrecognised transaction type")
   })
 })
