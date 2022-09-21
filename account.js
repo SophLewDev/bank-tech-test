@@ -33,14 +33,13 @@ class Account {
       let date = transaction.date
       let credit = "";
       let debit = "";
-        if (transaction instanceof Deposit) {
-        credit = transaction.amount + " "
-        this.balance += transaction.amount
-      }
-      else {
-        debit = transaction.amount + " "
-        this.balance -= transaction.amount
-      }
+        if (transaction.transactionType === "DEPOSIT") {
+          credit = transaction.amount + " "
+          this.balance += transaction.amount
+      } else if (transaction.transactionType === "WITHDRAWAL") {
+          debit = transaction.amount + " "
+          this.balance -= transaction.amount
+    }
       statement += `${date} || ${credit}|| ${debit}|| ${this.balance} ||\n`
     })
     return statement
