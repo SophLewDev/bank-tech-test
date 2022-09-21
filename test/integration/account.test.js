@@ -1,6 +1,6 @@
-const Account = require('../account')
-const Deposit = require('../deposit')
-const Withdrawal = require('../withdrawal')
+const Account = require('../../account')
+const Deposit = require('../../deposit')
+const Withdrawal = require('../../withdrawal')
 
 describe("account", () => {
   it("add deposit to account and return deposit", () => {
