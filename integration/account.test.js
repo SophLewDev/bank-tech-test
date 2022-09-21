@@ -38,6 +38,12 @@ describe("account", () => {
   })
   it("returns statement without any deposit or withdrawal", () => {
     const account = new Account()
-    expect(account.getStatement()).toEqual("date || credit || debit || balance")
+    expect(account.getStatement()).toEqual("date || credit || debit || balance\n")
+  })
+  it("adds a deposit to the account and returns statement", () => {
+    const deposit = new Deposit("20/09/2022",1000)
+    const account = new Account()
+    account.addToAccount(deposit)
+    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n")
   })
 })
