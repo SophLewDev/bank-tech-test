@@ -15,8 +15,8 @@ Install dependancies npm install.
 Open node in the terminal (ensure you have node installed).
 Create an account let account = new Account;.
 Create a Deposit and/or Withdrawal object:
-let deposit = new Deposit("21/09/2022",1000)
-let withdrawal = new Withdrawal("21/09/2022",500).
+`let deposit = new Deposit("21/09/2022",1000)`
+`let withdrawal = new Withdrawal("21/09/2022",500).`
 Get your current account balance printed to the console using account.getBalance().
 Get your current account statement printed to the console using account.getStatement().
 
