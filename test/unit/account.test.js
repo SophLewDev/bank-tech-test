@@ -21,4 +21,8 @@ describe("account", () => {
     account.addToAccount(fakeWithdrawal)
     expect(account.account).toEqual([fakeWithdrawal])
   })
+  it("shows balance is 0 / empty", () => {
+    const account = new Account()
+    expect(account.getBalance()).toEqual(0.00)
+  })
 })
