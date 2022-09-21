@@ -1,6 +1,4 @@
 const Account = require('../../src/account')
-const Deposit = require('../../src/deposit')
-const Withdrawal = require('../../src/withdrawal')
 
 describe("account", () => {
 
