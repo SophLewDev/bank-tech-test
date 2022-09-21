@@ -83,7 +83,8 @@ date || credit || debit || balance
 
 ```
 class Deposit {
-  constructor(date, amount) {     //date is a string, amount is an integer
+   //date is a string, amount is an integer
+  constructor(date, amount) {
     this.transactionType = "DEPOSIT"
     this.date = date
     this.amount = amount
@@ -92,7 +93,8 @@ class Deposit {
 }
 
 class Withdrawal {
-  constructor(date, amount) {     //date is a string, amount is an integer
+   //date is a string, amount is an integer
+  constructor(date, amount) {
     this.transactionType = "WITHDRAWAL"
     this.date = date
     this.amount = amount
