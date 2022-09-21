@@ -53,7 +53,7 @@ date || credit || debit || balance
 ### Diagram of the class systems
 
                             ┌──────────────────┐
-                            │ class Statement  │
+                            │ class Account    │
                             │                  │
                             │ initialize:      │
                             │listoftransactions|
