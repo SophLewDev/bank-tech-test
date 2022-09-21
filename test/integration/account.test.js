@@ -35,7 +35,7 @@ describe("account", () => {
     const deposit = new Deposit("20/09/2022",1000)
     const account = new Account()
     account.addToAccount(deposit)
-    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n")
+    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000\n")
   })
   it("returns statement after adding deposit and withdrawal", () => {
     const deposit = new Deposit("20/09/2022",1000)
@@ -43,7 +43,7 @@ describe("account", () => {
     const account = new Account()
     account.addToAccount(deposit)
     account.addToAccount(withdrawal)
-    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n20/09/2022 || || 500 || 500 ||\n")
+    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000\n20/09/2022 || || 500 || 500\n")
   })
   it("returns 'unrecognised transaction type' if date of deposit transaction added is not a string", () => {
     const deposit = new Deposit(789,1000)

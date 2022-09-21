@@ -27,7 +27,7 @@ class Account {
         transaction.amount + " " : "";
       let debit = transaction.transactionType === "WITHDRAWAL" ?
         transaction.amount + " " : "";
-      statement += `${transaction.date} || ${credit}|| ${debit}|| ${transaction.resultingAmount} ||\n`
+      statement += `${transaction.date} || ${credit}|| ${debit}|| ${transaction.resultingAmount}\n`
     })
     return statement
   }
