@@ -113,4 +113,14 @@ describe("account", () => {
     const account = new Account()
     expect(account.addToAccount(fakeWithdrawal)).toEqual("Unrecognised transaction type")
   })
+  it("returns 'unrecognised transaction type' if amount of deposit transaction added is not a number", () => {
+    const fakeDeposit = {
+      date: "20/09/2022",
+      amount: "1000",
+      transactionType: "DEPOSIT",
+      resultingAmount: 1000
+    }
+    const account = new Account()
+    expect(account.addToAccount(fakeDeposit)).toEqual("Unrecognised transaction type")
+  })
 })
