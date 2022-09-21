@@ -93,4 +93,14 @@ describe("account", () => {
     account.addToAccount(fakeWithdrawal)
     expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n20/09/2022 || || 500 || 500 ||\n")
   })
+  it("returns 'unrecognised transaction type' if date of deposit transaction added is not a string", () => {
+    const fakeDeposit = {
+      date: 789,
+      amount: 1000,
+      transactionType: "DEPOSIT",
+      resultingAmount: 1000
+    }
+    const account = new Account()
+    expect(account.addToAccount(fakeDeposit)).toEqual("Unrecognised transaction type")
+  })
 })
