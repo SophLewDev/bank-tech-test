@@ -69,4 +69,20 @@ describe("account", () => {
     account.addToAccount(fakeDeposit)
     expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n")
   })
+  it("returns statement after adding deposit and withdrawal", () => {
+    const fakeDeposit = {
+      date: "20/09/2022",
+      amount: 1000,
+      transactionType: "DEPOSIT"
+    }
+    const fakeWithdrawal = {
+      date: "20/09/2022",
+      amount: 500,
+      transactionType: "WITHDRAWAL"
+    }
+    const account = new Account()
+    account.addToAccount(fakeDeposit)
+    account.addToAccount(fakeWithdrawal)
+    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n20/09/2022 || || 500 || 500 ||\n")
+  })
 })
