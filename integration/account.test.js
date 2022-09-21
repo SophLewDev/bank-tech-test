@@ -40,10 +40,18 @@ describe("account", () => {
     const account = new Account()
     expect(account.getStatement()).toEqual("date || credit || debit || balance\n")
   })
-  it("adds a deposit to the account and returns statement", () => {
+  it("returns statement after adding a deposit to the account", () => {
     const deposit = new Deposit("20/09/2022",1000)
     const account = new Account()
     account.addToAccount(deposit)
     expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n")
+  })
+  it("returns statement after adding deposit and withdrawal", () => {
+    const deposit = new Deposit("20/09/2022",1000)
+    const withdrawal = new Withdrawal("20/09/2022",500)
+    const account = new Account()
+    account.addToAccount(deposit)
+    account.addToAccount(withdrawal)
+    expect(account.getStatement()).toEqual("date || credit || debit || balance\n20/09/2022 || 1000 || || 1000 ||\n20/09/2022 || || 500 || 500 ||\n")
   })
 })
