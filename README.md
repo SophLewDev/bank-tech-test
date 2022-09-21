@@ -20,6 +20,10 @@ let withdrawal = new Withdrawal("21/09/2022",500)
 Get your current account balance printed to the console using account.getBalance()
 Get your current acocunt statement printed to the console using account.getStatement()
 
+### Demo
+
+![alt text](img/bank_tech_test_gif.gif)
+
 ## Specification
 
 ### Requirements
