@@ -11,8 +11,9 @@ Within the account object, you can add transaction to account and be able to vie
 ### To run
 
 - Clone this repository git clone https://github.com/SophLewDev/bank-tech-test.
-- Install dependancies npm install.
 - Open node in the terminal (ensure you have node installed).
+- Install dependancies `npm install`.
+- Run tests via `jest`
 - Create an account let account = new Account;.
 - Create a Deposit and/or Withdrawal object:  
   `let deposit = new Deposit("21/09/2022",1000)`  
