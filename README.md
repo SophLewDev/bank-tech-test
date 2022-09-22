@@ -171,7 +171,7 @@ account.addToAccount(withdrawal)
 account.balance # => 500
 ```
 
-#### returns statement with no previoustransactions
+#### returns statement with no previous transactions
 
 ```
 const account = new Account()
